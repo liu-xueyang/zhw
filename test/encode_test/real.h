@@ -9,7 +9,7 @@
 
 typedef long double ldouble;
 // quad may give error (g++ 6.4.0) without -std=c++11, use quadp, f128?
-typedef __float128 quad;
+// typedef __float128 quad;
 
 #if defined(USE_QUAD)
 #include <quadmath.h>

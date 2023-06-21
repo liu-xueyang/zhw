@@ -9,6 +9,9 @@
 #define _DIM /*1*/ 2 /*3*/
 #endif
 
+#ifndef VCD
+#define VCD
+#endif
 
 #include <cmath> // floor
 #include <cstdlib> // exit, atoi, atof

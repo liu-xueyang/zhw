@@ -1,0 +1,91 @@
+[*]
+[*] GTKWave Analyzer v3.3.107 (w)1999-2020 BSI
+[*] Wed Jun 21 22:57:18 2023
+[*]
+[dumpfile] "/Users/liu91/Code/zhw/test/encode_test/test.vcd"
+[dumpfile_mtime] "Wed Jun 21 22:55:41 2023"
+[dumpfile_size] 45285
+[savefile] "/Users/liu91/Code/zhw/test/encode_test/encoder.gtkw"
+[timestart] 0
+[size] 1920 1062
+[pos] -1 -1
+*-5.989292 110 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] SystemC.
+[treeopen] SystemC.c_driver_fp.
+[treeopen] SystemC.c_dut_enc.
+[treeopen] SystemC.u_dut.
+[treeopen] SystemC.u_dut.u_encode_stream.
+[treeopen] SystemC.u_dut.u_find_emax.
+[treeopen] SystemC.u_dut.u_find_emax.m_fp.
+[treeopen] SystemC.u_dut.u_find_emax.s_fp.
+[sst_width] 193
+[signals_width] 141
+[sst_expanded] 1
+[sst_vpaned_height] 649
+@28
+SystemC.clk
+SystemC.reset
+@24
+SystemC.maxbits[15:0]
+@22
+SystemC.maxprec[15:0]
+SystemC.minbits[15:0]
+SystemC.minexp[15:0]
+@200
+-driver_fp
+@28
+SystemC.c_driver_fp.valid
+SystemC.c_driver_fp.ready
+SystemC.c_driver_fp.data.sign
+@200
+-dut_enc
+@28
+SystemC.c_dut_enc.valid
+SystemC.c_dut_enc.ready
+SystemC.c_dut_enc.data.tlast
+@200
+-find_emax
+@28
+SystemC.u_dut.u_find_emax.m_fp.ready
+SystemC.u_dut.u_find_emax.m_fp.valid
+@200
+-find_emax_ex
+@22
+SystemC.u_dut.u_find_emax.m_ex.data[7:0]
+@28
+SystemC.u_dut.u_find_emax.m_ex.ready
+SystemC.u_dut.u_find_emax.m_ex.valid
+SystemC.u_dut.u_find_emax.emax_v
+@29
+SystemC.u_dut.u_find_emax.count[1:0]
+@200
+-fwd_cast
+@28
+SystemC.u_dut.u_fwd_cast.m_valid
+SystemC.u_dut.u_fwd_cast.m_ready
+@200
+-encode_block
+@28
+SystemC.u_dut.u_encode_block.m_valid
+SystemC.u_dut.u_encode_block.m_ready
+@200
+-block_buffer
+@28
+SystemC.u_dut.u_block_buffer.m_valid
+SystemC.u_dut.u_block_buffer.m_ready
+@200
+-encode_ints
+@28
+SystemC.u_dut.u_encode_ints.m_valid
+SystemC.u_dut.u_encode_ints.m_ready
+@200
+-encode_stream
+@24
+SystemC.u_dut.u_encode_stream.cs.posw[6:0]
+@22
+SystemC.u_dut.u_encode_stream.cs.posr[6:0]
+@28
+SystemC.u_dut.u_encode_stream.m_bits.valid
+SystemC.u_dut.u_encode_stream.m_bits.ready
+[pattern_trace] 1
+[pattern_trace] 0

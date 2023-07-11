@@ -131,6 +131,7 @@ struct tb_driver : public sc_module
 
 				test_case->get_next_data_set_float(flit);
 				m_port.write(flit); // write has call to wait();
+				cout << flit << endl;
 			}
 		}
 	}
@@ -160,6 +161,7 @@ struct tb_driver : public sc_module
 			for (unsigned i = 0; ; i++)  {
 				// wait();
 				flit = s_port.read(); 						// get DUT flit (read has call to wait());
+				cout << "0x" << hex << flit.tdata << endl;
 				if(verbose)
 				{
 					if(!test_case->get_next_zfp_stream_word(validationflit))	// get validation flit from .zfp file to compare with.

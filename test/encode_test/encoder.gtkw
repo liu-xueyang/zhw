@@ -1,25 +1,23 @@
 [*]
 [*] GTKWave Analyzer v3.3.107 (w)1999-2020 BSI
-[*] Wed Jun 21 22:57:18 2023
+[*] Mon Jun 26 18:36:40 2023
 [*]
 [dumpfile] "/Users/liu91/Code/zhw/test/encode_test/test.vcd"
-[dumpfile_mtime] "Wed Jun 21 22:55:41 2023"
-[dumpfile_size] 45285
+[dumpfile_mtime] "Fri Jun 23 01:02:17 2023"
+[dumpfile_size] 109010
 [savefile] "/Users/liu91/Code/zhw/test/encode_test/encoder.gtkw"
 [timestart] 0
 [size] 1920 1062
 [pos] -1 -1
-*-5.989292 110 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-8.741467 530 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] SystemC.
-[treeopen] SystemC.c_driver_fp.
-[treeopen] SystemC.c_dut_enc.
 [treeopen] SystemC.u_dut.
 [treeopen] SystemC.u_dut.u_encode_stream.
-[treeopen] SystemC.u_dut.u_find_emax.
 [treeopen] SystemC.u_dut.u_find_emax.m_fp.
 [treeopen] SystemC.u_dut.u_find_emax.s_fp.
+[treeopen] SystemC.u_dut.u_ssplit_ex.
 [sst_width] 193
-[signals_width] 141
+[signals_width] 275
 [sst_expanded] 1
 [sst_vpaned_height] 649
 @28
@@ -37,11 +35,17 @@ SystemC.minexp[15:0]
 SystemC.c_driver_fp.valid
 SystemC.c_driver_fp.ready
 SystemC.c_driver_fp.data.sign
+@22
+SystemC.c_driver_fp.data.expo[10:0]
+SystemC.c_driver_fp.data.frac[51:0]
 @200
 -dut_enc
 @28
 SystemC.c_dut_enc.valid
 SystemC.c_dut_enc.ready
+@22
+SystemC.c_dut_enc.data.tdata[63:0]
+@28
 SystemC.c_dut_enc.data.tlast
 @200
 -find_emax
@@ -50,14 +54,12 @@ SystemC.u_dut.u_find_emax.m_fp.ready
 SystemC.u_dut.u_find_emax.m_fp.valid
 @200
 -find_emax_ex
-@22
-SystemC.u_dut.u_find_emax.m_ex.data[7:0]
 @28
 SystemC.u_dut.u_find_emax.m_ex.ready
 SystemC.u_dut.u_find_emax.m_ex.valid
 SystemC.u_dut.u_find_emax.emax_v
-@29
-SystemC.u_dut.u_find_emax.count[1:0]
+@22
+SystemC.u_dut.u_find_emax.count[3:0]
 @200
 -fwd_cast
 @28
@@ -79,13 +81,29 @@ SystemC.u_dut.u_block_buffer.m_ready
 SystemC.u_dut.u_encode_ints.m_valid
 SystemC.u_dut.u_encode_ints.m_ready
 @200
--encode_stream
-@24
-SystemC.u_dut.u_encode_stream.cs.posw[6:0]
+-ssplit
+@28
+SystemC.u_dut.u_ssplit_ex.m_port1.ready
+SystemC.u_dut.u_ssplit_ex.m_port1.valid
 @22
-SystemC.u_dut.u_encode_stream.cs.posr[6:0]
+SystemC.u_dut.u_ssplit_ex.m_port1.data[10:0]
+@200
+-ssplit_port2
+@28
+SystemC.u_dut.u_ssplit_ex.m_port2.ready
+SystemC.u_dut.u_ssplit_ex.m_port2.valid
+@22
+SystemC.u_dut.u_ssplit_ex.m_port2.data[10:0]
+@200
+-encode_stream
 @28
 SystemC.u_dut.u_encode_stream.m_bits.valid
 SystemC.u_dut.u_encode_stream.m_bits.ready
+@22
+SystemC.u_dut.u_encode_stream.cs.posw[7:0]
+SystemC.u_dut.u_encode_stream.cs.bits[11:0]
+SystemC.u_dut.u_encode_stream.s_bc[5:0]
+@23
+SystemC.u_dut.u_encode_stream.s_bp[32:0]
 [pattern_trace] 1
 [pattern_trace] 0

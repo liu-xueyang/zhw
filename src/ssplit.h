@@ -54,6 +54,15 @@ SC_MODULE(ssplit)
 		s_port.ready_w(c_port1.ready_r() && c_port2.ready_r());
 	}
 
+#if defined(VCD)
+	void start_of_simulation()
+	{
+		sc_trace(zhw::tf, s_port,   (std::string(name())+".s_port").c_str());
+		sc_trace(zhw::tf, m_port1,  (std::string(name())+".m_port1").c_str());
+		sc_trace(zhw::tf, m_port2,  (std::string(name())+".m_port2").c_str());
+	}
+#endif
+
 	SC_CTOR(ssplit) :
 		c_port1("c_port1"),
 		c_port2("c_port2"),

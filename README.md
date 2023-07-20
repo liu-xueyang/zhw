@@ -74,3 +74,15 @@ See LICENSE and NOTICE for details.
 SPDX-License-Identifier: BSD-3-Clause
 
 LLNL-CODE-811758
+
+### Generating testing hex files for RTL experiment
+```
+./encode_test -b 10 -d 3 -r 16 > ../test_data_hex/b10_d3_r16.scout
+python3 utility_parser.py -i test_data_hex/b10_d3_r16.scout -o test_data_hex/b10_d3_r16
+```
+See cycle behaviors using gtkwave:
+```
+cd test/encode_test
+open test.vcd
+# Load encoder.gtkw in GTKWave
+```

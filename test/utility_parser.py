@@ -8,6 +8,7 @@
 # < 0x04ddc0b5d81ed5df5
 
 import argparse
+import os
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-i", help="Input file to parse", 
@@ -18,12 +19,22 @@ args= parser.parse_args()
 
 file_in = open(args.input_fname, 'r')
 Lines = file_in.readlines()
-file_wr_in = open(args.output_fname+".in", 'a')
-file_wr_out = open(args.output_fname+".out", 'a')
+
+output_fname_in = args.output_fname+"_in.hex32"
+output_fname_out = args.output_fname+"_out.hex32"
+if os.path.exists(output_fname_in):
+    os.remove(output_fname_in)
+if os.path.exists(output_fname_out):
+    os.remove(output_fname_out)
+file_wr_in = open(output_fname_in, 'a')
+file_wr_out = open(output_fname_out, 'a')
+
 
 # Strips the newline character
 for line in Lines:
     if line[0] == '>':
-        file_wr_in.write(line[5:])
+        file_wr_in.write(line[5:13] + '\n')
+        file_wr_in.write(line[13:])
     if line[0] == '<':
-        file_wr_out.write(line[5:])
+        file_wr_out.write(line[5:13] + '\n')
+        file_wr_out.write(line[13:])

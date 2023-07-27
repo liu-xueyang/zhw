@@ -22,19 +22,40 @@ Lines = file_in.readlines()
 
 output_fname_in = args.output_fname+"_in.hex32"
 output_fname_out = args.output_fname+"_out.hex32"
+output_fname_in_H = args.output_fname+"_in.h"
+output_fname_out_H = args.output_fname+"_out.h"
 if os.path.exists(output_fname_in):
     os.remove(output_fname_in)
 if os.path.exists(output_fname_out):
     os.remove(output_fname_out)
+if os.path.exists(output_fname_in_H):
+    os.remove(output_fname_in_H)
+if os.path.exists(output_fname_out_H):
+    os.remove(output_fname_out_H)
 file_wr_in = open(output_fname_in, 'a')
 file_wr_out = open(output_fname_out, 'a')
+file_wr_in_H = open(output_fname_in_H, 'a')
+file_wr_out_H = open(output_fname_out_H, 'a')
 
-
+file_wr_in_H.write("uint32_t data_zhw[IN_DATASET_SIZE]  = {\n")
+file_wr_out_H.write("uint32_t result_zhw[OUT_DATASET_SIZE]  = {\n")
+n_in = 0
+n_out = 0
 # Strips the newline character
 for line in Lines:
     if line[0] == '>':
         file_wr_in.write(line[5:13] + '\n')
         file_wr_in.write(line[13:])
+        file_wr_in_H.write("0x" + line[5:13] + ',')
+        file_wr_in_H.write("0x" + line[13:21] + ",\n")
+        n_in = n_in + 1
     if line[0] == '<':
         file_wr_out.write(line[5:13] + '\n')
         file_wr_out.write(line[13:])
+        file_wr_out_H.write("0x" + line[5:13] + ',')
+        file_wr_out_H.write("0x" + line[13:21] + ",\n")
+        n_out = n_out + 1
+file_wr_in_H.write("}; \n")
+file_wr_in_H.write("#define IN_DATASET_SIZE " + str(n_in))
+file_wr_out_H.write("}; \n")
+file_wr_out_H.write("#define OUT_DATASET_SIZE " + str(n_out))
